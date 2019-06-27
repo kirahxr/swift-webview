@@ -14,8 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // status bar
+        var preferredStatusBarStyle : UIStatusBarStyle {
+            return .lightContent
+        }
+        UINavigationBar.appearance().clipsToBounds = true
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        statusBar.backgroundColor = UIColor.white
+        
+        // 
         window = UIWindow()
         window?.makeKeyAndVisible()
         
